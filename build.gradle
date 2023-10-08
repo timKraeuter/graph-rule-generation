@@ -52,6 +52,10 @@ sonar {
     }
 }
 
+tasks.named('sonar').configure {
+    dependsOn jacocoTestReport
+}
+
 jacocoTestReport {
     reports {
         xml.required = true
