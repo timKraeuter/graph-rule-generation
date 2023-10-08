@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    // Analysis
+    id "org.sonarqube" version "4.4.0.3356"
+    id 'jacoco'
+    id "net.ltgt.errorprone" version "3.1.0"
+    id "com.diffplug.spotless" version "6.21.0"
+}
+
+group = 'no.tk'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // XML-marshalling not part of jdk 11 anymore.
+    // https://mvnrepository.com/artifact/jakarta.xml.bind/jaxb-api
+    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.1'
+    // https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime
+    implementation("org.glassfish.jaxb:jaxb-runtime:4.0.3")
+
+    // https://mvnrepository.com/artifact/org.eclipse.elk/org.eclipse.elk.core
+    implementation 'org.eclipse.elk:org.eclipse.elk.core:0.7.1'
+    // https://mvnrepository.com/artifact/org.eclipse.elk/org.eclipse.elk.alg.layered
+    implementation 'org.eclipse.elk:org.eclipse.elk.alg.layered:0.7.1'
+
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+
+    errorprone("com.google.errorprone:error_prone_core:2.18.0")
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
+tasks.compileJava {
+    // Ignore classes generated from XSD.
+    options.errorprone.excludedPaths = ".*/src/main/java/no/tk/groove/gxl/.*"
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+        formatAnnotations()
+    }
+}

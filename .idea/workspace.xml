@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/Edge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/GraphRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/GraphRuleGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/GrooveGxlHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/GxlToXMLConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/ShouldNotHappenRuntimeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/BooleanGrooveValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveEdge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveGraphBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/IntGrooveValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/StringGrooveValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Attr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Bag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Bool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Edge.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Enum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Float.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Gxl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Int.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Locator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Rel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Relend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Seq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Set.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/String.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Tup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/GrooveGraphRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/GrooveRuleBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/GrooveRuleWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/NodeRuleAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/tk/groove/GxlToXMLConverterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/tk/groove/RuleGenerationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/no/tk/util/FileTestHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/addNodesWithEdge.gpr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/addSingleNode.gpr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/contextEdge.gpr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/deleteSingleNode.gpr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/nodeWithFlag.gpr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/threeRuleSynch.gpr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/twoRuleSynch.gpr" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2WUioqlG9802YmfqmUkfieNaZsp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Source/graph-rule-generation/src/test/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="no.tk.groove" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Source\graph-rule-generation\src\test\resources" />
+      <recent name="C:\Source\graph-rule-generation\src\main\java\no\tk\groove\gxl" />
+      <recent name="C:\Source\graph-rule-generation\src\main\java\no\tk\api" />
+      <recent name="C:\Source\graph-rule-generation\src\main\java" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="no.tk.groove" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="no.tk.util" />
+      <recent name="no.tk.groove" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.graph-rule-generation [build]">
+    <configuration name="GxlToXMLConverterTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;no.tk.groove.GxlToXMLConverterTest.test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="RuleGenerationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;no.tk.groove.RuleGenerationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="graph-rule-generation [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.graph-rule-generation [build]" />
+        <item itemvalue="Gradle.RuleGenerationTest" />
+        <item itemvalue="Gradle.GxlToXMLConverterTest.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="" />
+      <created>1696793736844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696793736844</updated>
+      <workItem from="1696793737843" duration="926000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
