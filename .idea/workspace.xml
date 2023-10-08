@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="Add gradle cache">
+    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="Add jacoco link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696793736844</updated>
       <workItem from="1696793737843" duration="1147000" />
-      <workItem from="1696795073918" duration="251000" />
+      <workItem from="1696795073918" duration="759000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -221,7 +220,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696795254045</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add sonar config">
+      <option name="closed" value="true" />
+      <created>1696795341306</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696795341306</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add jacoco link">
+      <option name="closed" value="true" />
+      <created>1696795382180</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696795382180</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +247,8 @@
     <MESSAGE value="move workflow file" />
     <MESSAGE value="Git Ignore" />
     <MESSAGE value="Add gradle cache" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add gradle cache" />
+    <MESSAGE value="Add sonar config" />
+    <MESSAGE value="Add jacoco link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add jacoco link" />
   </component>
 </project>

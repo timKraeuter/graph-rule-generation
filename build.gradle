@@ -49,6 +49,7 @@ sonar {
         property "sonar.projectKey", "timKraeuter_graph-rule-generation"
         property "sonar.organization", "timkraeuter"
         property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.exclusions", "src/main/java/no/tk/groove/gxl/**"
     }
 }
 
