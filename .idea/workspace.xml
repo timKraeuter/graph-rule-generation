@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="move workflow file">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="Git Ignore">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696793736844</updated>
       <workItem from="1696793737843" duration="1147000" />
-      <workItem from="1696795073918" duration="24000" />
+      <workItem from="1696795073918" duration="166000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -205,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696794886026</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Git Ignore">
+      <option name="closed" value="true" />
+      <created>1696795116688</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696795116688</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +222,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="move workflow file" />
-    <option name="LAST_COMMIT_MESSAGE" value="move workflow file" />
+    <MESSAGE value="Git Ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Git Ignore" />
   </component>
 </project>
