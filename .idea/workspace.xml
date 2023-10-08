@@ -4,70 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/GraphRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/GraphRuleGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/api/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/GrooveGxlHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/GxlToXMLConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/ShouldNotHappenRuntimeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/BooleanGrooveValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveEdge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveGraphBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/GrooveValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/IntGrooveValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/graph/StringGrooveValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Attr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Bag.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Bool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Edge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Enum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Float.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Graph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Gxl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Int.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Locator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/ObjectFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Rel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Relend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Seq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Set.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/String.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Tup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/gxl/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/GrooveGraphRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/GrooveRuleBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/GrooveRuleWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/no/tk/groove/rule/NodeRuleAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/no/tk/groove/GxlToXMLConverterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/no/tk/groove/RuleGenerationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/no/tk/util/FileTestHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/addNodesWithEdge.gpr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/addSingleNode.gpr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/contextEdge.gpr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/deleteSingleNode.gpr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/nodeWithFlag.gpr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/threeRuleSynch.gpr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/twoRuleSynch.gpr" afterDir="false" />
+    <list default="true" id="b0074f2d-3c37-482b-bda2-c7c63d16fd16" name="Changes" comment="move workflow file">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +17,21 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,39 +44,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2WUioqlG9802YmfqmUkfieNaZsp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Source/graph-rule-generation/src/test/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Source/graph-rule-generation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="no.tk.groove" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Source\graph-rule-generation" />
       <recent name="C:\Source\graph-rule-generation\src\test\resources" />
       <recent name="C:\Source\graph-rule-generation\src\main\java\no\tk\groove\gxl" />
       <recent name="C:\Source\graph-rule-generation\src\main\java\no\tk\api" />
@@ -130,6 +86,10 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Source\graph-rule-generation\.github\workflows" />
+      <recent name="C:\Source\graph-rule-generation\.github" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="no.tk.groove" />
@@ -226,11 +186,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696793736844</updated>
-      <workItem from="1696793737843" duration="926000" />
+      <workItem from="1696793737843" duration="1147000" />
+      <workItem from="1696795073918" duration="24000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1696794820559</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696794820559</updated>
+    </task>
+    <task id="LOCAL-00002" summary="move workflow file">
+      <option name="closed" value="true" />
+      <created>1696794886026</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696794886026</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="move workflow file" />
+    <option name="LAST_COMMIT_MESSAGE" value="move workflow file" />
   </component>
 </project>
