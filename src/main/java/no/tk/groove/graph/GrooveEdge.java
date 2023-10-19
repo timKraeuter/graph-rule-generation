@@ -6,7 +6,6 @@ import no.tk.api.Edge;
 public class GrooveEdge implements Edge {
   private static final AtomicLong idCounter = new AtomicLong(-1);
   private final String id = Long.toString(idCounter.incrementAndGet());
-
   private final String name;
   private final GrooveNode sourceNode;
   private final GrooveNode targetNode;
