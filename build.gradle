@@ -46,6 +46,12 @@ test {
     }
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
 spotless {
     java {
         googleJavaFormat()
