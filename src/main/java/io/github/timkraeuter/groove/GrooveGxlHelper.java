@@ -1,12 +1,12 @@
 package io.github.timkraeuter.groove;
 
-import io.github.timkraeuter.groove.gxl.Edge;
-import java.util.HashMap;
-import java.util.Map;
 import io.github.timkraeuter.groove.gxl.Attr;
+import io.github.timkraeuter.groove.gxl.Edge;
 import io.github.timkraeuter.groove.gxl.Graph;
 import io.github.timkraeuter.groove.gxl.Gxl;
 import io.github.timkraeuter.groove.gxl.Node;
+import java.util.HashMap;
+import java.util.Map;
 import org.eclipse.elk.alg.layered.options.LayeredMetaDataProvider;
 import org.eclipse.elk.core.RecursiveGraphLayoutEngine;
 import org.eclipse.elk.core.data.LayoutMetaDataService;

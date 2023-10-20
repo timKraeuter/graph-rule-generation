@@ -4,6 +4,7 @@ import io.github.timkraeuter.groove.GrooveGxlHelper;
 import io.github.timkraeuter.groove.GxlToXMLConverter;
 import io.github.timkraeuter.groove.graph.GrooveEdge;
 import io.github.timkraeuter.groove.graph.GrooveNode;
+import io.github.timkraeuter.groove.gxl.Graph;
 import io.github.timkraeuter.groove.gxl.Gxl;
 import io.github.timkraeuter.groove.gxl.Node;
 import java.nio.file.Path;
@@ -12,7 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import io.github.timkraeuter.groove.gxl.Graph;
 
 public class GrooveRuleWriter {
 

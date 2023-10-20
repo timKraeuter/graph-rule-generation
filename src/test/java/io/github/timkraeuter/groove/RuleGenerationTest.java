@@ -2,6 +2,11 @@ package io.github.timkraeuter.groove;
 
 import static io.github.timkraeuter.util.FileTestHelper.getResource;
 
+import io.github.timkraeuter.groove.graph.GrooveNode;
+import io.github.timkraeuter.groove.rule.GrooveGraphRule;
+import io.github.timkraeuter.groove.rule.GrooveRuleBuilder;
+import io.github.timkraeuter.groove.rule.GrooveRuleWriter;
+import io.github.timkraeuter.util.FileTestHelper;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
@@ -9,11 +14,6 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
-import io.github.timkraeuter.groove.graph.GrooveNode;
-import io.github.timkraeuter.groove.rule.GrooveGraphRule;
-import io.github.timkraeuter.groove.rule.GrooveRuleBuilder;
-import io.github.timkraeuter.groove.rule.GrooveRuleWriter;
-import io.github.timkraeuter.util.FileTestHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

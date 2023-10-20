@@ -1,7 +1,7 @@
 package io.github.timkraeuter.groove.graph;
 
-import java.util.concurrent.atomic.AtomicLong;
 import io.github.timkraeuter.api.Edge;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class GrooveEdge implements Edge {
   private static final AtomicLong idCounter = new AtomicLong(-1);

@@ -4,6 +4,9 @@ plugins {
     id 'maven-publish'
     id 'signing'
     id 'io.github.gradle-nexus.publish-plugin' version '1.3.0'
+
+    // Analysis
+    id 'com.diffplug.spotless' version '6.21.0'
 }
 
 group = 'io.github.timKraeuter'
@@ -39,6 +42,13 @@ test {
     useJUnitPlatform()
     testLogging {
         showStandardStreams = true
+    }
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+        formatAnnotations()
     }
 }
 

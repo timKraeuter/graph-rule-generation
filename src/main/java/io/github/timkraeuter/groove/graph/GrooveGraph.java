@@ -1,10 +1,10 @@
 package io.github.timkraeuter.groove.graph;
 
+import io.github.timkraeuter.api.Graph;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
-import io.github.timkraeuter.api.Graph;
 
 /** Represents a graph which is used to generate a graph grammar for the tool groove. */
 public class GrooveGraph implements Graph<GrooveNode, GrooveEdge> {

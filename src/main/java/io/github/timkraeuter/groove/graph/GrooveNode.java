@@ -1,11 +1,11 @@
 package io.github.timkraeuter.groove.graph;
 
+import io.github.timkraeuter.api.Node;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
-import io.github.timkraeuter.api.Node;
 
 public class GrooveNode implements Node {
   public static final AtomicLong idCounter = new AtomicLong(-1);
