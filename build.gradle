@@ -5,8 +5,9 @@ plugins {
     id 'signing'
     id 'io.github.gradle-nexus.publish-plugin' version '1.3.0'
 
-    // Analysis
+    // Analysis & Formatting
     id 'com.diffplug.spotless' version '6.21.0'
+    id 'jacoco'
     id "org.sonarqube" version "4.4.1.3373"
 }
 
