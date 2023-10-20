@@ -19,23 +19,19 @@ repositories {
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-
     // XML-marshalling not part of jdk 11 anymore.
-    // https://mvnrepository.com/artifact/jakarta.xml.bind/jaxb-api
     implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.1'
-    // https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime
     implementation("org.glassfish.jaxb:jaxb-runtime:4.0.3")
 
-    // https://mvnrepository.com/artifact/org.eclipse.elk/org.eclipse.elk.core
+    // Layout
     implementation 'org.eclipse.elk:org.eclipse.elk.core:0.8.1'
-    // https://mvnrepository.com/artifact/org.eclipse.elk/org.eclipse.elk.alg.layered
     implementation 'org.eclipse.elk:org.eclipse.elk.alg.layered:0.8.1'
 
-    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    // Test
     testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }
 
