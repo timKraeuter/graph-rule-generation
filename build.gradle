@@ -68,6 +68,9 @@ sonar {
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.exclusions", "src/main/java/io/github/timkraeuter/groove/gxl/**"
     }
+}
+
+tasks.named('sonar').configure {
     dependsOn jacocoTestReport
 }
 
