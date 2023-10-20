@@ -7,6 +7,7 @@ plugins {
 
     // Analysis
     id 'com.diffplug.spotless' version '6.21.0'
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 group = 'io.github.timKraeuter'
@@ -55,6 +56,14 @@ spotless {
 java {
     withSourcesJar()
     withJavadocJar()
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "timKraeuter_graph-rule-generation"
+        property "sonar.organization", "timkraeuter"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
 
 publishing {
