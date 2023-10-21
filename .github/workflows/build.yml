@@ -1,4 +1,4 @@
-name: Build, test & analyze generator
+name: Build, test & analyze
 on:
   push:
   pull_request:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    name: Build, test & analyze generator
+    name: Build, test & analyze
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
