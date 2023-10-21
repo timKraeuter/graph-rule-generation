@@ -1,7 +1,7 @@
 package io.github.timkraeuter.groove.rule;
 
+import io.github.timkraeuter.api.GraphNode;
 import io.github.timkraeuter.api.GraphRuleGenerator;
-import io.github.timkraeuter.api.Node;
 import io.github.timkraeuter.groove.graph.GrooveEdge;
 import io.github.timkraeuter.groove.graph.GrooveNode;
 import java.util.Comparator;
@@ -12,13 +12,13 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public class GrooveRuleBuilder implements GraphRuleGenerator {
-  private final Map<String, GrooveGraphRule> rulenameToRule = new LinkedHashMap<>();
+  private final Map<String, GrooveGraphRule> ruleNameToRule = new LinkedHashMap<>();
   private GrooveGraphRule currentRule = null;
 
-  public static Stream<GrooveGraphRule> createSynchedRules(
-      Map<String, Set<GrooveGraphRule>> nameToToBeSynchedRules) {
+  public static Stream<GrooveGraphRule> createSyncedRules(
+      Map<String, Set<GrooveGraphRule>> nameToToBeSyncedRules) {
     GrooveRuleBuilder ruleGenerator = new GrooveRuleBuilder();
-    nameToToBeSynchedRules.forEach(
+    nameToToBeSyncedRules.forEach(
         (synchedRuleName, synchedRules) -> {
           ruleGenerator.startRule(synchedRuleName);
 
@@ -78,7 +78,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
 
   @Override
   public void startRule(String ruleName) {
-    if (rulenameToRule.get(ruleName) != null) {
+    if (ruleNameToRule.get(ruleName) != null) {
       throw new IllegalArgumentException(
           String.format("A rule with the name \"%s\" already exists!", ruleName));
     }
@@ -103,7 +103,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   @Override
-  public void addEdge(String edgeName, Node source, Node target) {
+  public void addEdge(String edgeName, GraphNode source, GraphNode target) {
 
     assert this.currentRule != null;
     Map<String, GrooveNode> contextAndAddedNodes = this.currentRule.getContextAndAddedNodes();
@@ -134,7 +134,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   @Override
-  public void deleteEdge(String edgeName, Node source, Node target) {
+  public void deleteEdge(String edgeName, GraphNode source, GraphNode target) {
     assert this.currentRule != null;
     Map<String, GrooveNode> contextAndAddedNodes = this.currentRule.getAllNodes();
 
@@ -147,7 +147,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   @Override
-  public void contextEdge(String name, GrooveNode source, GrooveNode target) {
+  public void contextEdge(String name, GraphNode source, GraphNode target) {
     assert this.currentRule != null;
     Map<String, GrooveNode> nodes = this.currentRule.getAllNodes();
 
@@ -160,7 +160,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   private void checkNodeContainment(
-      Node source, Node target, GrooveNode sourceNode, GrooveNode targetNode) {
+      GraphNode source, GraphNode target, GrooveNode sourceNode, GrooveNode targetNode) {
     if (sourceNode == null) {
       throw new IllegalArgumentException(
           String.format("Source node %s not contained in the rule!", source));
@@ -174,12 +174,12 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   @Override
   public GrooveGraphRule buildRule() {
     GrooveGraphRule newRule = this.currentRule;
-    this.rulenameToRule.put(newRule.getRuleName(), newRule);
+    this.ruleNameToRule.put(newRule.getRuleName(), newRule);
     this.currentRule = null;
     return newRule;
   }
 
   public Stream<GrooveGraphRule> getRules() {
-    return this.rulenameToRule.values().stream();
+    return this.ruleNameToRule.values().stream();
   }
 }

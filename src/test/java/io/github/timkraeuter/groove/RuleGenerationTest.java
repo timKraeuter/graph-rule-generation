@@ -51,11 +51,17 @@ class RuleGenerationTest {
     testRuleEquals("deleteSingleNode", tempDir);
   }
 
-  private static void testRuleEquals(String resource, Path tempDir) {
-    String resourceRuleName = resource + ".gpr";
-    Path expected_rule = getResource(resourceRuleName);
-    Path generated_rule = Path.of(tempDir.toString(), resourceRuleName);
-    FileTestHelper.testFileEquals(expected_rule, generated_rule);
+  @Test
+  void generateNACNodeRuleTest() throws Exception {
+    Path tempDir = Files.createTempDirectory("");
+
+    GrooveRuleBuilder ruleBuilder = new GrooveRuleBuilder();
+    ruleBuilder.startRule("nacSingleNode");
+    ruleBuilder.nacNode("node");
+    ruleBuilder.buildRule();
+    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+
+    testRuleEquals("nacSingleNode", tempDir);
   }
 
   @Test
@@ -103,7 +109,7 @@ class RuleGenerationTest {
   }
 
   @Test
-  void generateTwoRuleSynchTest() throws Exception {
+  void generateTwoRuleSyncTest() throws Exception {
     Path tempDir = Files.createTempDirectory("");
 
     GrooveRuleBuilder generator1 = new GrooveRuleBuilder();
@@ -128,7 +134,7 @@ class RuleGenerationTest {
 
     nameToToBeSynchedRules.put("twoRuleSynch", toBeSynched);
     Stream<GrooveGraphRule> synchedRules =
-        GrooveRuleBuilder.createSynchedRules(nameToToBeSynchedRules);
+        GrooveRuleBuilder.createSyncedRules(nameToToBeSynchedRules);
 
     GrooveRuleWriter.writeRules(tempDir, synchedRules, true);
 
@@ -136,7 +142,7 @@ class RuleGenerationTest {
   }
 
   @Test
-  void generateThreeRuleSynchTest() throws Exception {
+  void generateThreeRuleSyncTest() throws Exception {
     Path tempDir = Files.createTempDirectory("");
 
     GrooveRuleBuilder generator1 = new GrooveRuleBuilder();
@@ -169,10 +175,17 @@ class RuleGenerationTest {
 
     nameToToBeSynchedRules.put("threeRuleSynch", toBeSynched);
     Stream<GrooveGraphRule> synchedRules =
-        GrooveRuleBuilder.createSynchedRules(nameToToBeSynchedRules);
+        GrooveRuleBuilder.createSyncedRules(nameToToBeSynchedRules);
 
     GrooveRuleWriter.writeRules(tempDir, synchedRules, true);
 
     testRuleEquals("threeRuleSynch", tempDir);
+  }
+
+  private static void testRuleEquals(String resource, Path tempDir) {
+    String resourceRuleName = resource + ".gpr";
+    Path expected_rule = getResource(resourceRuleName);
+    Path generated_rule = Path.of(tempDir.toString(), resourceRuleName);
+    FileTestHelper.testFileEquals(expected_rule, generated_rule);
   }
 }

@@ -3,11 +3,9 @@ package io.github.timkraeuter.groove.rule;
 import io.github.timkraeuter.api.GraphRule;
 import io.github.timkraeuter.groove.graph.GrooveEdge;
 import io.github.timkraeuter.groove.graph.GrooveNode;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -139,8 +137,8 @@ public class GrooveGraphRule implements GraphRule {
     return addedAndContextNodes;
   }
 
-  public List<GrooveNode> getNodesToBeDeleted() {
-    return new ArrayList<>(this.nodesToBeDeleted.values());
+  public Set<GrooveNode> getNodesToBeDeleted() {
+    return new LinkedHashSet<>(this.nodesToBeDeleted.values());
   }
 
   public Map<String, GrooveNode> getAllNodes() {

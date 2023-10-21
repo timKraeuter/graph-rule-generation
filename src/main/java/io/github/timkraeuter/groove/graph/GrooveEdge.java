@@ -1,9 +1,9 @@
 package io.github.timkraeuter.groove.graph;
 
-import io.github.timkraeuter.api.Edge;
+import io.github.timkraeuter.api.GraphEdge;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class GrooveEdge implements Edge {
+public class GrooveEdge implements GraphEdge {
   private static final AtomicLong idCounter = new AtomicLong(-1);
   private final String id = Long.toString(idCounter.incrementAndGet());
   private final String name;
