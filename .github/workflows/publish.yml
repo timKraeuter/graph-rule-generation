@@ -19,8 +19,8 @@ jobs:
         run: chmod +x gradlew
       - name: Publish
         env:
-          signingKey: ${{ secrets.signingKey }}
-          signingPassword: ${{ secrets.signingPassword }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
         run: ./gradlew publishToSonatype
