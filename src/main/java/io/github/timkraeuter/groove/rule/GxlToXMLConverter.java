@@ -1,5 +1,6 @@
-package io.github.timkraeuter.groove;
+package io.github.timkraeuter.groove.rule;
 
+import io.github.timkraeuter.groove.ShouldNotHappenRuntimeException;
 import io.github.timkraeuter.groove.gxl.Gxl;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -9,7 +10,7 @@ import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class GxlToXMLConverter {
+class GxlToXMLConverter {
 
   private GxlToXMLConverter() {}
 

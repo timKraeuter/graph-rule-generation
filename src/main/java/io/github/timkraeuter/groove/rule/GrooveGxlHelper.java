@@ -1,4 +1,4 @@
-package io.github.timkraeuter.groove;
+package io.github.timkraeuter.groove.rule;
 
 import io.github.timkraeuter.groove.gxl.Attr;
 import io.github.timkraeuter.groove.gxl.Edge;
@@ -14,7 +14,7 @@ import org.eclipse.elk.core.util.BasicProgressMonitor;
 import org.eclipse.elk.graph.ElkNode;
 import org.eclipse.elk.graph.util.ElkGraphUtil;
 
-public class GrooveGxlHelper {
+class GrooveGxlHelper {
   private static final int XY_SHIFT_GROOVE_LAYOUT = 50;
   private static final String LABEL = "label";
   private static final String FLAG = "flag:";

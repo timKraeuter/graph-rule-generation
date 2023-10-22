@@ -13,6 +13,13 @@ public class GrooveGraph implements Graph<GrooveNode, GrooveEdge> {
   private final Set<GrooveNode> nodes;
   private final Set<GrooveEdge> edges;
 
+  /**
+   * Create a groove graph.
+   *
+   * @param name name
+   * @param nodes nodes
+   * @param edges edges
+   */
   public GrooveGraph(String name, Set<GrooveNode> nodes, Set<GrooveEdge> edges) {
     this.name = name;
     this.nodes = new LinkedHashSet<>(nodes);
@@ -29,6 +36,11 @@ public class GrooveGraph implements Graph<GrooveNode, GrooveEdge> {
     return this.edges.stream();
   }
 
+  /**
+   * Return the name.
+   *
+   * @return name.
+   */
   public String getName() {
     return this.name;
   }
@@ -36,6 +48,10 @@ public class GrooveGraph implements Graph<GrooveNode, GrooveEdge> {
   /**
    * Creates a new graph which is the union of the other two graphs. Union of nodes. Union of edges.
    * Does not check if nodes have distinct names (we assume the graphs are prefixed using the name)!
+   *
+   * @param graph the graph to union with.
+   * @param nameResolver resolve the graph name.
+   * @return Union of the graphs.
    */
   public GrooveGraph union(GrooveGraph graph, BinaryOperator<String> nameResolver) {
     Set<GrooveNode> unionNodes = new LinkedHashSet<>();

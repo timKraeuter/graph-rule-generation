@@ -1,4 +1,4 @@
-package io.github.timkraeuter.groove;
+package io.github.timkraeuter.groove.rule;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -21,9 +21,11 @@ class GxlToXMLConverterTest {
     assertThat(
         gxlString,
         is(
-            "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
-                + "<gxl xmlns=\"http://www.gupro.de/GXL/gxl-1.0.dtd\">\n"
-                + "    <graph id=\"addNodesWithEdge\" role=\"rule\" edgeids=\"false\" edgemode=\"directed\"/>\n"
-                + "</gxl>\n"));
+            """
+                <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+                <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+                    <graph id="addNodesWithEdge" role="rule" edgeids="false" edgemode="directed"/>
+                </gxl>
+                """));
   }
 }

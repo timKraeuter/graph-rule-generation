@@ -1,11 +1,8 @@
-package io.github.timkraeuter.groove;
+package io.github.timkraeuter.groove.rule;
 
 import static io.github.timkraeuter.util.FileTestHelper.getResource;
 
 import io.github.timkraeuter.groove.graph.GrooveNode;
-import io.github.timkraeuter.groove.rule.GrooveGraphRule;
-import io.github.timkraeuter.groove.rule.GrooveRuleBuilder;
-import io.github.timkraeuter.groove.rule.GrooveRuleWriter;
 import io.github.timkraeuter.util.FileTestHelper;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +19,7 @@ class RuleGenerationTest {
 
   @BeforeEach
   void setUp() {
-    GrooveNode.idCounter.set(-1);
+    GrooveNode.setIDCounter(-1);
   }
 
   @Test

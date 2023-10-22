@@ -61,6 +61,10 @@ java {
     withJavadocJar()
 }
 
+javadoc {
+    exclude 'io/github/timkraeuter/groove/gxl/**'
+}
+
 sonar {
     properties {
         property "sonar.projectKey", "timKraeuter_graph-rule-generation"

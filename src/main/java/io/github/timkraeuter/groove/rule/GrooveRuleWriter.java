@@ -1,7 +1,5 @@
 package io.github.timkraeuter.groove.rule;
 
-import io.github.timkraeuter.groove.GrooveGxlHelper;
-import io.github.timkraeuter.groove.GxlToXMLConverter;
 import io.github.timkraeuter.groove.graph.GrooveEdge;
 import io.github.timkraeuter.groove.graph.GrooveNode;
 import io.github.timkraeuter.groove.gxl.Graph;
@@ -14,16 +12,24 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/** Helper class to write GT-Rules for Groove. */
 public class GrooveRuleWriter {
 
   private GrooveRuleWriter() {
     // Helper class
   }
 
-  public static final String ASPECT_LABEL_NEW = "new:";
-  public static final String ASPECT_LABEL_DEL = "del:";
-  public static final String ASPECT_LABEL_NOT = "not:";
+  private static final String ASPECT_LABEL_NEW = "new:";
+  private static final String ASPECT_LABEL_DEL = "del:";
+  private static final String ASPECT_LABEL_NOT = "not:";
 
+  /**
+   * Write graph transformation rules.
+   *
+   * @param dir target directory where to write the rules.
+   * @param rules stream of GT rules.
+   * @param layout set to true to layout the rules.
+   */
   public static void writeRules(Path dir, Stream<GrooveGraphRule> rules, boolean layout) {
     rules.forEach(
         grooveGraphRule -> {

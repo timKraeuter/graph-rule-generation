@@ -11,10 +11,23 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
+/** Builder for Groove rules. */
 public class GrooveRuleBuilder implements GraphRuleGenerator {
-  private final Map<String, GrooveGraphRule> ruleNameToRule = new LinkedHashMap<>();
-  private GrooveGraphRule currentRule = null;
+  private final Map<String, GrooveGraphRule> ruleNameToRule;
+  private GrooveGraphRule currentRule;
 
+  /** Create a new rule builder. */
+  public GrooveRuleBuilder() {
+    ruleNameToRule = new LinkedHashMap<>();
+    currentRule = null;
+  }
+
+  /**
+   * Created synced rules.
+   *
+   * @param nameToToBeSyncedRules name and rules to be synched.
+   * @return Synced GT rules.
+   */
   public static Stream<GrooveGraphRule> createSyncedRules(
       Map<String, Set<GrooveGraphRule>> nameToToBeSyncedRules) {
     GrooveRuleBuilder ruleGenerator = new GrooveRuleBuilder();
@@ -179,6 +192,11 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
     return newRule;
   }
 
+  /**
+   * Get all rules.
+   *
+   * @return all build rules.
+   */
   public Stream<GrooveGraphRule> getRules() {
     return this.ruleNameToRule.values().stream();
   }
