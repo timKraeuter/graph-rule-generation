@@ -128,6 +128,14 @@ nexusPublishing {
         sonatype {
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            def sonaTypeUsername = findProperty("SONATYPE_USERNAME")
+            def sonaTypePassword = findProperty("SONATYPE_PASSWORD")
+            if (sonaTypeUsername != null && sonaTypePassword != null) {
+                println("Setting username and password")
+                println(sonaTypeUsername.get());
+                username = sonaTypeUsername.get()
+                password = sonaTypePassword.get()
+            }
         }
     }
 }
