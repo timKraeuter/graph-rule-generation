@@ -115,10 +115,10 @@ publishing {
 }
 
 signing {
-    def sonaTypeUsername = findProperty("SONATYPE_USERNAME")
     def signingKey = findProperty("SIGNING_KEY")
     def signingPassword = findProperty("SIGNING_PASSWORD")
     if (signingKey != null && signingPassword != null) {
+        println("Keys found!")
         useInMemoryPgpKeys(signingKey, signingPassword)
     }
     sign publishing.publications.grg
@@ -132,8 +132,6 @@ nexusPublishing {
             def sonaTypeUsername = findProperty("SONATYPE_USERNAME")
             def sonaTypePassword = findProperty("SONATYPE_PASSWORD")
             if (sonaTypeUsername != null && sonaTypePassword != null) {
-                println("Setting username and password")
-                println(sonaTypeUsername.get());
                 username = sonaTypeUsername.get()
                 password = sonaTypePassword.get()
             }

@@ -25,4 +25,4 @@ jobs:
           ORG_GRADLE_PROJECT_SONATYPEPASSWORD: ${{ secrets.ORG_GRADLE_PROJECT_SONATYPEPASSWORD }}
           SONATYPEUSERNAME: ${{ secrets.ORG_GRADLE_PROJECT_SONATYPEUSERNAME }}
           SONATYPEPASSWORD: ${{ secrets.ORG_GRADLE_PROJECT_SONATYPEPASSWORD }}
-        run: ./gradlew publishToSonatype --info
+        run: ./gradlew signGrgPublication
