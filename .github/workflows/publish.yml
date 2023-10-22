@@ -23,4 +23,4 @@ jobs:
           SIGNING_PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        run: ./gradlew publishToSonatype
+        run: ./gradlew publishToSonatype --debug
