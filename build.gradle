@@ -131,8 +131,6 @@ nexusPublishing {
             def sonaTypeUsername = System.getenv("SONATYPE_USERNAME")
             def sonaTypePassword = System.getenv("SONATYPE_PASSWORD")
             if (sonaTypeUsername != null && sonaTypePassword != null) {
-                println("Credentials found!")
-                println(sonaTypeUsername + "123")
                 username = sonaTypeUsername
                 password = sonaTypePassword
             }
