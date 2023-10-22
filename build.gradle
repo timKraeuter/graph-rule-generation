@@ -128,9 +128,9 @@ nexusPublishing {
         sonatype {
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-            ossrhUsername = providers.systemProperty("OSSRH_USERNAME")
-            ossrhPassword = providers.systemProperty("OSSRH_PASSWORD")
-            if (ossrhUsername.isPresent() && ossrhPassword.isPresent()) {
+            def ossrhUsername = findProperty("OSSRH_USERNAME")
+            def ossrhPassword = findProperty("OSSRH_PASSWORD")
+            if (ossrhUsername != null && ossrhPassword != null) {
                 username = ossrhUsername.get()
                 password = ossrhPassword.get()
             }
