@@ -131,8 +131,8 @@ nexusPublishing {
             ossrhUsername = providers.systemProperty("OSSRH_USERNAME")
             ossrhPassword = providers.systemProperty("OSSRH_PASSWORD")
             if (ossrhUsername.isPresent() && ossrhPassword.isPresent()) {
-                username.set(ossrhUsername.get())
-                password.set(ossrhPassword.get())
+                username = ossrhUsername.get()
+                password = ossrhPassword.get()
             }
         }
     }
