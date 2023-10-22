@@ -115,6 +115,7 @@ publishing {
 }
 
 signing {
+    def sonaTypeUsername = findProperty("SONATYPE_USERNAME")
     def signingKey = findProperty("SIGNING_KEY")
     def signingPassword = findProperty("SIGNING_PASSWORD")
     if (signingKey != null && signingPassword != null) {
