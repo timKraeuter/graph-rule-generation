@@ -1,7 +1,9 @@
 package io.github.timkraeuter.groove.rule;
 
 import io.github.timkraeuter.groove.graph.GrooveEdge;
+import io.github.timkraeuter.groove.graph.GrooveGraph;
 import io.github.timkraeuter.groove.graph.GrooveNode;
+import io.github.timkraeuter.groove.graph.GrooveValue;
 import io.github.timkraeuter.groove.gxl.Graph;
 import io.github.timkraeuter.groove.gxl.Gxl;
 import io.github.timkraeuter.groove.gxl.Node;
@@ -13,9 +15,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /** Helper class to write GT-Rules for Groove. */
-public class GrooveRuleWriter {
+public class GrooveRuleAndGraphWriter {
 
-  private GrooveRuleWriter() {
+  private GrooveRuleAndGraphWriter() {
     // Helper class
   }
 
@@ -91,6 +93,76 @@ public class GrooveRuleWriter {
           // Write each rule to a file
           writeRuleToFile(dir, grooveGraphRule, gxl);
         });
+  }
+
+  /**
+   * Write a graph to disk for groove to consume.
+   *
+   * @param dir directory
+   * @param fileName file name of the graph
+   * @param graph graph
+   * @param layout true if the graph should be layouted.
+   */
+  public static void writeGraph(Path dir, String fileName, GrooveGraph graph, boolean layout) {
+    Gxl gxl = createGxlFromGrooveGraph(graph, layout);
+    GxlToXMLConverter.toXml(gxl, Paths.get(dir.toString(), fileName));
+  }
+
+  private static Gxl createGxlFromGrooveGraph(GrooveGraph graph, boolean layout) {
+    Gxl gxl = new Gxl();
+    io.github.timkraeuter.groove.gxl.Graph gxlGraph =
+        GrooveGxlHelper.createStandardGxlGraph(graph.getName(), gxl);
+
+    Map<String, String> idToNodeLabel = new HashMap<>();
+    Map<String, Node> grooveNodeIdToGxlNode = new HashMap<>();
+
+    graph
+        .nodes()
+        .forEach(
+            node -> {
+              Node gxlNode =
+                  GrooveGxlHelper.createNodeWithName(node.getId(), node.getName(), gxlGraph);
+              // Add flags
+              node.getFlags()
+                  .forEach(flag -> GrooveGxlHelper.addFlagToNode(gxlGraph, gxlNode, flag));
+              // Add data nodes/attributes
+              node.getAttributes()
+                  .forEach(
+                      (name, value) ->
+                          addNodeAttribute(gxlGraph, idToNodeLabel, gxlNode, name, value));
+
+              idToNodeLabel.put(node.getId(), node.getName());
+              grooveNodeIdToGxlNode.put(node.getId(), gxlNode);
+            });
+    graph
+        .edges()
+        .forEach(
+            edge ->
+                GrooveGxlHelper.createEdgeWithName(
+                    gxlGraph,
+                    grooveNodeIdToGxlNode.get(edge.getSourceNode().getId()),
+                    grooveNodeIdToGxlNode.get(edge.getTargetNode().getId()),
+                    edge.getName()));
+
+    if (layout) {
+      GrooveGxlHelper.layoutGraph(gxlGraph, idToNodeLabel);
+    }
+    return gxl;
+  }
+
+  private static void addNodeAttribute(
+      io.github.timkraeuter.groove.gxl.Graph graph,
+      Map<String, String> idToNodeLabel,
+      Node attributeHolder,
+      String attributeName,
+      GrooveValue attributeValue) {
+    String attributeNodeName =
+        String.format("%s:%s", attributeValue.getTypeName(), attributeValue.getValue());
+    Node dataNode =
+        GrooveGxlHelper.createNodeWithName(GrooveNode.getNextNodeId(), attributeNodeName, graph);
+    GrooveGxlHelper.createEdgeWithName(graph, attributeHolder, dataNode, attributeName);
+
+    idToNodeLabel.put(dataNode.getId(), attributeNodeName);
   }
 
   private static void layoutRuleIfConfigured(

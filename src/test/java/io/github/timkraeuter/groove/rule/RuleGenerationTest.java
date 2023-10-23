@@ -30,7 +30,7 @@ class RuleGenerationTest {
     ruleBuilder.startRule("addSingleNode");
     ruleBuilder.addNode("node");
     ruleBuilder.buildRule();
-    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
 
     testRuleEquals("addSingleNode", tempDir);
   }
@@ -43,7 +43,7 @@ class RuleGenerationTest {
     ruleBuilder.startRule("deleteSingleNode");
     ruleBuilder.deleteNode("node");
     ruleBuilder.buildRule();
-    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
 
     testRuleEquals("deleteSingleNode", tempDir);
   }
@@ -56,7 +56,7 @@ class RuleGenerationTest {
     ruleBuilder.startRule("nacSingleNode");
     ruleBuilder.nacNode("node");
     ruleBuilder.buildRule();
-    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
 
     testRuleEquals("nacSingleNode", tempDir);
   }
@@ -71,7 +71,7 @@ class RuleGenerationTest {
     GrooveNode target = ruleBuilder.addNode("target");
     ruleBuilder.addEdge("edge", source, target);
     ruleBuilder.buildRule();
-    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
 
     testRuleEquals("addNodesWithEdge", tempDir);
   }
@@ -86,7 +86,7 @@ class RuleGenerationTest {
     GrooveNode target = ruleBuilder.contextNode("target");
     ruleBuilder.contextEdge("edge", source, target);
     ruleBuilder.buildRule();
-    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
 
     testRuleEquals("contextEdge", tempDir);
   }
@@ -100,7 +100,7 @@ class RuleGenerationTest {
     GrooveNode node = ruleBuilder.addNode("node");
     node.addFlag("root");
     ruleBuilder.buildRule();
-    GrooveRuleWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
 
     testRuleEquals("nodeWithFlag", tempDir);
   }
@@ -133,7 +133,7 @@ class RuleGenerationTest {
     Stream<GrooveGraphRule> synchedRules =
         GrooveRuleBuilder.createSyncedRules(nameToToBeSynchedRules);
 
-    GrooveRuleWriter.writeRules(tempDir, synchedRules, true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, synchedRules, true);
 
     testRuleEquals("twoRuleSynch", tempDir);
   }
@@ -174,7 +174,7 @@ class RuleGenerationTest {
     Stream<GrooveGraphRule> synchedRules =
         GrooveRuleBuilder.createSyncedRules(nameToToBeSynchedRules);
 
-    GrooveRuleWriter.writeRules(tempDir, synchedRules, true);
+    GrooveRuleAndGraphWriter.writeRules(tempDir, synchedRules, true);
 
     testRuleEquals("threeRuleSynch", tempDir);
   }

@@ -27,7 +27,12 @@ public class GrooveNode implements GraphNode {
     this.attributes = new LinkedHashMap<>();
   }
 
-  private static String getNextNodeId() {
+  /**
+   * Get the next generated ID for nodes.
+   *
+   * @return node id.
+   */
+  public static String getNextNodeId() {
     return "n" + idCounter.incrementAndGet();
   }
 

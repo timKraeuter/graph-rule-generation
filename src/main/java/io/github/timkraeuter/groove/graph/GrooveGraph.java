@@ -1,6 +1,8 @@
 package io.github.timkraeuter.groove.graph;
 
 import io.github.timkraeuter.api.Graph;
+import io.github.timkraeuter.groove.rule.GrooveRuleAndGraphWriter;
+import java.nio.file.Path;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.function.BinaryOperator;
@@ -64,5 +66,16 @@ public class GrooveGraph implements Graph<GrooveNode, GrooveEdge> {
 
     return new GrooveGraph(
         nameResolver.apply(this.getName(), graph.getName()), unionNodes, unionEdges);
+  }
+
+  /**
+   * Write the graph to a dir using the groove (GXL) format.
+   *
+   * @param dir directory
+   * @param filename name of the file.
+   * @param layout true if the graph should be layouted
+   */
+  public void write(Path dir, String filename, boolean layout) {
+    GrooveRuleAndGraphWriter.writeGraph(dir, filename, this, layout);
   }
 }
