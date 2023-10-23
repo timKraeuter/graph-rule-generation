@@ -2,10 +2,13 @@ package io.github.timkraeuter.groove;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
+import io.github.timkraeuter.groove.graph.GrooveNode;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class GrooveGTSBuilderTest {
@@ -15,16 +18,38 @@ class GrooveGTSBuilderTest {
     Path tempDir = Files.createTempDirectory("");
     GrooveGTSBuilder grooveGTSBuilder = new GrooveGTSBuilder();
 
-    grooveGTSBuilder.addProperty("A", "B");
+    grooveGTSBuilder
+        .startGraph()
+        .name("start")
+        .addNode(new GrooveNode("A"))
+        .addNode(new GrooveNode("B"));
 
-    grooveGTSBuilder.writePropertiesFile(tempDir);
+    grooveGTSBuilder.writeStartGraph(tempDir);
 
-    String propertiesContent = Files.readString(Path.of(tempDir.toString(), "system.properties"));
+    String startGraph = Files.readString(Path.of(tempDir.toString(), "start.gst"));
 
-    assertThat(propertiesContent, containsString("A=B"));
-    assertThat(propertiesContent, containsString("(graph rule generation, see https://github.com/timKraeuter/graph-rule-generation)"));
-    assertThat(propertiesContent, containsString("grooveVersion=6.1.0"));
-    assertThat(propertiesContent, containsString("grammarVersion=3.7"));
+    assertThat(
+        startGraph,
+        is(
+            """
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+    <graph id="start" role="rule" edgeids="false" edgemode="directed">
+        <node id="n0"/>
+        <edge from="n0" to="n0">
+            <attr name="label">
+                <string>A</string>
+            </attr>
+        </edge>
+        <node id="n1"/>
+        <edge from="n1" to="n1">
+            <attr name="label">
+                <string>B</string>
+            </attr>
+        </edge>
+    </graph>
+</gxl>
+"""));
   }
 
   @Test
@@ -39,7 +64,10 @@ class GrooveGTSBuilderTest {
     String propertiesContent = Files.readString(Path.of(tempDir.toString(), "system.properties"));
 
     assertThat(propertiesContent, containsString("A=B"));
-    assertThat(propertiesContent, containsString("(graph rule generation, see https://mvnrepository.com/artifact/io.github.timKraeuter/graph-rule-generation)"));
+    assertThat(
+        propertiesContent,
+        containsString(
+            "(graph rule generation, see https://github.com/timKraeuter/graph-rule-generation)"));
     assertThat(propertiesContent, containsString("grooveVersion=6.1.0"));
     assertThat(propertiesContent, containsString("grammarVersion=3.7"));
   }
