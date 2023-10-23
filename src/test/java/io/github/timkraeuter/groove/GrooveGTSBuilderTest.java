@@ -11,6 +11,23 @@ import static org.hamcrest.MatcherAssert.assertThat;
 class GrooveGTSBuilderTest {
 
   @Test
+  void writeStartGraphTest() throws IOException {
+    Path tempDir = Files.createTempDirectory("");
+    GrooveGTSBuilder grooveGTSBuilder = new GrooveGTSBuilder();
+
+    grooveGTSBuilder.addProperty("A", "B");
+
+    grooveGTSBuilder.writePropertiesFile(tempDir);
+
+    String propertiesContent = Files.readString(Path.of(tempDir.toString(), "system.properties"));
+
+    assertThat(propertiesContent, containsString("A=B"));
+    assertThat(propertiesContent, containsString("(graph rule generation, see https://github.com/timKraeuter/graph-rule-generation)"));
+    assertThat(propertiesContent, containsString("grooveVersion=6.1.0"));
+    assertThat(propertiesContent, containsString("grammarVersion=3.7"));
+  }
+
+  @Test
   void writePropertiesFileTest() throws IOException {
     Path tempDir = Files.createTempDirectory("");
     GrooveGTSBuilder grooveGTSBuilder = new GrooveGTSBuilder();
