@@ -6,4 +6,4 @@
 
 # graph-rule-generation
 
-Available on [Maven Central](https://mvnrepository.com/artifact/io.github.timKraeuter/graph-rule-generation).
+Available on [Maven Central](https://mvnrepository.com/artifact/io.github.timKraeuter/graph-rule-generation) and faster indexing on [SonaType](https://central.sonatype.com/artifact/io.github.timKraeuter/graph-rule-generation).
