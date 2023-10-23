@@ -31,24 +31,61 @@ class GrooveGTSBuilderTest {
         startGraph,
         is(
             """
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
-    <graph id="start" role="rule" edgeids="false" edgemode="directed">
-        <node id="n0"/>
-        <edge from="n0" to="n0">
-            <attr name="label">
-                <string>A</string>
-            </attr>
-        </edge>
-        <node id="n1"/>
-        <edge from="n1" to="n1">
-            <attr name="label">
-                <string>B</string>
-            </attr>
-        </edge>
-    </graph>
-</gxl>
-"""));
+          <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+          <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+              <graph id="start" role="rule" edgeids="false" edgemode="directed">
+                  <node id="n0"/>
+                  <edge from="n0" to="n0">
+                      <attr name="label">
+                          <string>A</string>
+                      </attr>
+                  </edge>
+                  <node id="n1"/>
+                  <edge from="n1" to="n1">
+                      <attr name="label">
+                          <string>B</string>
+                      </attr>
+                  </edge>
+              </graph>
+          </gxl>
+          """));
+
+    grooveGTSBuilder.layout(true);
+
+    grooveGTSBuilder.writeStartGraph(tempDir);
+
+    startGraph = Files.readString(Path.of(tempDir.toString(), "start.gst"));
+
+    assertThat(
+        startGraph,
+        is(
+            """
+          <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+          <gxl xmlns="http://www.gupro.de/GXL/gxl-1.0.dtd">
+              <graph id="start" role="rule" edgeids="false" edgemode="directed">
+                  <node id="n0">
+                      <attr name="layout">
+                          <string>62 72 0 0</string>
+                      </attr>
+                  </node>
+                  <edge from="n0" to="n0">
+                      <attr name="label">
+                          <string>A</string>
+                      </attr>
+                  </edge>
+                  <node id="n1">
+                      <attr name="layout">
+                          <string>97 72 0 0</string>
+                      </attr>
+                  </node>
+                  <edge from="n1" to="n1">
+                      <attr name="label">
+                          <string>B</string>
+                      </attr>
+                  </edge>
+              </graph>
+          </gxl>
+          """));
   }
 
   @Test
