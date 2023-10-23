@@ -11,4 +11,14 @@ public class ShouldNotHappenRuntimeException extends RuntimeException {
   public ShouldNotHappenRuntimeException(Exception e) {
     super(e);
   }
+
+  /**
+   * Exception with a message.
+   *
+   * @param message message.
+   * @param e exception
+   */
+  public ShouldNotHappenRuntimeException(String message, Exception e) {
+    super(message, e);
+  }
 }

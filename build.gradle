@@ -28,6 +28,9 @@ dependencies {
     implementation 'org.eclipse.elk:org.eclipse.elk.core:0.8.1'
     implementation 'org.eclipse.elk:org.eclipse.elk.alg.layered:0.8.1'
 
+    // IO
+    implementation 'commons-io:commons-io:2.13.0'
+
     // Test
     testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'

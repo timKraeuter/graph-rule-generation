@@ -10,7 +10,7 @@ public class GrooveGraphBuilder {
   private final Set<GrooveNode> nodes;
   private final Set<GrooveEdge> edges;
 
-  /** Create a new grapb builder. */
+  /** Create a new graph builder. */
   public GrooveGraphBuilder() {
     this.nodes = new LinkedHashSet<>();
     this.edges = new LinkedHashSet<>();
@@ -22,7 +22,7 @@ public class GrooveGraphBuilder {
    * @param name name.
    * @return Graph builder
    */
-  public GrooveGraphBuilder setName(String name) {
+  public GrooveGraphBuilder name(String name) {
     this.name = name;
     return this;
   }
