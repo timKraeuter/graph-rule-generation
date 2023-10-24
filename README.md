@@ -46,7 +46,7 @@ _GrooveRuleAndGraphWriter_.
 Here is an example of how to use the builder:
 
 ```java
-GrooveRuleBuilder ruleBuilder=new GrooveRuleBuilder();
+GrooveRuleBuilder ruleBuilder = new GrooveRuleBuilder();
 ruleBuilder.startRule("sampleRule");
 
 // Context nodes and edges
