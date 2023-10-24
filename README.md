@@ -22,7 +22,7 @@ GrooveNode b = new GrooveNode("B");
 GrooveGraph graph = builder.name("Graph")
     .addNode(a)
     .addNode(b)
-    .addEdge("A to B", a, b)
+    .addEdge("A_B", a, b)
     .build();
 ```
 
@@ -35,19 +35,19 @@ ruleBuilder.startRule("sampleRule");
 // Adding nodes and edges
 GrooveNode a = ruleBuilder.addNode("A");
 GrooveNode b = ruleBuilder.addNode("B");
-ruleBuilder.addEdge("A to B", a, b);
+ruleBuilder.addEdge("A_B", a, b);
 // Deleting nodes and edges
 GrooveNode c = ruleBuilder.deleteNode("C");
 GrooveNode d = ruleBuilder.deleteNode("D");
-ruleBuilder.deleteEdge("C to D", c, d);
+ruleBuilder.deleteEdge("C_D", c, d);
 // Context nodes and edges
 GrooveNode e = ruleBuilder.contextNode("E");
 GrooveNode f = ruleBuilder.contextNode("F");
-ruleBuilder.contextEdge("E to F", e, f);
+ruleBuilder.contextEdge("E_F", e, f);
 // NAC nodes
 GrooveNode g = ruleBuilder.nacNode("G");
 GrooveNode h = ruleBuilder.nacNode("H");
-ruleBuilder.contextEdge("G to H", g, h);
+ruleBuilder.contextEdge("G_H", g, h);
 
 GrooveGraphRule gtRule = ruleBuilder.buildRule();
 ```
