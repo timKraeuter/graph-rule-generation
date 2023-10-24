@@ -41,9 +41,9 @@ GrooveNode c = ruleBuilder.deleteNode("C");
 GrooveNode d = ruleBuilder.deleteNode("D");
 ruleBuilder.deleteEdge("C to D", c, d);
 // Context nodes and edges
-GrooveNode e = ruleBuilder.deleteNode("E");
-GrooveNode f = ruleBuilder.deleteNode("F");
-ruleBuilder.deleteEdge("E to F", e, f);
+GrooveNode e = ruleBuilder.contextNode("E");
+GrooveNode f = ruleBuilder.contextNode("F");
+ruleBuilder.contextEdge("E to F", e, f);
 // NAC nodes
 GrooveNode g = ruleBuilder.nacNode("G");
 GrooveNode h = ruleBuilder.nacNode("H");
