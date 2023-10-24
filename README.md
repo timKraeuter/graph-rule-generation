@@ -47,7 +47,7 @@ ruleBuilder.contextEdge("E to F", e, f);
 // NAC nodes
 GrooveNode g = ruleBuilder.nacNode("G");
 GrooveNode h = ruleBuilder.nacNode("H");
-ruleBuilder.deleteEdge("G to H", g, h);
+ruleBuilder.contextEdge("G to H", g, h);
 
 GrooveGraphRule gtRule = ruleBuilder.buildRule();
 ```
