@@ -91,6 +91,21 @@ class GrooveRuleGenerationTest {
   }
 
   @Test
+  void generateNACEdgeRuleTest() throws Exception {
+    Path tempDir = Files.createTempDirectory("");
+
+    GrooveRuleBuilder ruleBuilder = new GrooveRuleBuilder();
+    ruleBuilder.startRule("nacEdge");
+    GrooveNode source = ruleBuilder.nacNode("source");
+    GrooveNode target = ruleBuilder.nacNode("target");
+    ruleBuilder.nacEdge("edge", source, target);
+    ruleBuilder.buildRule();
+    GrooveRuleAndGraphWriter.writeRules(tempDir, ruleBuilder.getRules(), true);
+
+    testRuleEquals("nacEdge", tempDir);
+  }
+
+  @Test
   void generateNodeWithFlagTest() throws Exception {
     Path tempDir = Files.createTempDirectory("");
 

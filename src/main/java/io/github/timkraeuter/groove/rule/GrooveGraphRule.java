@@ -19,6 +19,7 @@ public class GrooveGraphRule implements GraphRule {
   private final Map<String, GrooveNode> nacNodes;
   private final Map<String, GrooveEdge> edgesToBeAdded;
   private final Map<String, GrooveEdge> contextEdges;
+  private final Map<String, GrooveEdge> nacEdges;
   private final Map<String, GrooveEdge> edgesToBeDeleted;
 
   /**
@@ -33,6 +34,7 @@ public class GrooveGraphRule implements GraphRule {
     this.nodesToBeDeleted = new LinkedHashMap<>();
     this.edgesToBeAdded = new LinkedHashMap<>();
     this.contextEdges = new LinkedHashMap<>();
+    this.nacEdges = new LinkedHashMap<>();
     this.edgesToBeDeleted = new LinkedHashMap<>();
     this.nacNodes = new LinkedHashMap<>();
   }
@@ -118,6 +120,11 @@ public class GrooveGraphRule implements GraphRule {
     this.contextEdges.put(edge.getId(), edge);
   }
 
+  void addNacEdge(GrooveEdge edge) {
+    // It should be checked elsewhere that the source and target nodes are contained in the rule!
+    this.nacEdges.put(edge.getId(), edge);
+  }
+
   /**
    * Return the added nodes.
    *
@@ -166,10 +173,19 @@ public class GrooveGraphRule implements GraphRule {
   /**
    * Return context edges.
    *
-   * @return edges.
+   * @return context edges.
    */
   public Set<GrooveEdge> getContextEdges() {
     return new LinkedHashSet<>(this.contextEdges.values());
+  }
+
+  /**
+   * Return nac edges.
+   *
+   * @return nac edges.
+   */
+  public Set<GrooveEdge> getNacEdges() {
+    return new LinkedHashSet<>(this.nacEdges.values());
   }
 
   /**

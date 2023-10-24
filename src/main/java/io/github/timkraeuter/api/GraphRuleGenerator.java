@@ -1,5 +1,7 @@
 package io.github.timkraeuter.api;
 
+import io.github.timkraeuter.groove.graph.GrooveNode;
+
 /** Represent a rule generator for graphs. */
 public interface GraphRuleGenerator {
 
@@ -74,6 +76,16 @@ public interface GraphRuleGenerator {
    * @return builder.
    */
   GraphRuleGenerator contextEdge(String name, GraphNode source, GraphNode target);
+
+  /**
+   * Define that the current rule is not applicable if an edge between the two nodes exists.
+   *
+   * @param name edge name
+   * @param source source node
+   * @param target target node
+   * @return builder.
+   */
+  GraphRuleGenerator nacEdge(String name, GrooveNode source, GrooveNode target);
 
   /**
    * Build the current rule.

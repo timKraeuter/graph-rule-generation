@@ -176,6 +176,20 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
     return this;
   }
 
+  @Override
+  public GrooveRuleBuilder nacEdge(String edge, GrooveNode source, GrooveNode target) {
+    assert this.currentRule != null;
+    Map<String, GrooveNode> nodes = this.currentRule.getAllNodes();
+
+    GrooveNode sourceNode = nodes.get(source.getId());
+    GrooveNode targetNode = nodes.get(target.getId());
+
+    this.checkNodeContainment(source, target, sourceNode, targetNode);
+
+    this.currentRule.addNacEdge(new GrooveEdge(edge, sourceNode, targetNode));
+    return this;
+  }
+
   private void checkNodeContainment(
       GraphNode source, GraphNode target, GrooveNode sourceNode, GrooveNode targetNode) {
     if (sourceNode == null) {

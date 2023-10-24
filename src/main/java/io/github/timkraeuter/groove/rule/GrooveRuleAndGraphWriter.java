@@ -89,6 +89,14 @@ public class GrooveRuleAndGraphWriter {
                   toBeDeletedEdge ->
                       addEdgeToGxlGraph(
                           graph, toBeDeletedEdge, allGxlNodes, NodeRuleAspect.CONTEXT));
+
+          // Add nac edges to gxl
+          grooveGraphRule
+              .getNacEdges()
+              .forEach(
+                  toBeDeletedEdge ->
+                      addEdgeToGxlGraph(graph, toBeDeletedEdge, allGxlNodes, NodeRuleAspect.NOT));
+
           layoutRuleIfConfigured(layout, grooveGraphRule, graph);
           // Write each rule to a file
           writeRuleToFile(dir, grooveGraphRule, gxl);
