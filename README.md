@@ -50,23 +50,23 @@ GrooveRuleBuilder ruleBuilder=new GrooveRuleBuilder();
 ruleBuilder.startRule("sampleRule");
 
 // Context nodes and edges
-GrooveNode a=ruleBuilder.contextNode("A");
-GrooveNode b=ruleBuilder.contextNode("B");
+GrooveNode a = ruleBuilder.contextNode("A");
+GrooveNode b = ruleBuilder.contextNode("B");
 ruleBuilder.contextEdge("AB",a,b);
 // Deleting nodes and edges
-GrooveNode c=ruleBuilder.deleteNode("C");
-GrooveNode d=ruleBuilder.deleteNode("D");
+GrooveNode c = ruleBuilder.deleteNode("C");
+GrooveNode d = ruleBuilder.deleteNode("D");
 ruleBuilder.deleteEdge("CD",c,d);
 // Adding nodes and edges
-GrooveNode e=ruleBuilder.addNode("E");
-GrooveNode f=ruleBuilder.addNode("F");
+GrooveNode e = ruleBuilder.addNode("E");
+GrooveNode f = ruleBuilder.addNode("F");
 ruleBuilder.addEdge("EF",e,f);
 // NAC nodes
-GrooveNode g=ruleBuilder.nacNode("G");
-GrooveNode h=ruleBuilder.nacNode("H");
+GrooveNode g = ruleBuilder.nacNode("G");
+GrooveNode h = ruleBuilder.nacNode("H");
 ruleBuilder.contextEdge("GH",g,h);
 
-GrooveGraphRule gtRule=ruleBuilder.buildRule();
+GrooveGraphRule gtRule = ruleBuilder.buildRule();
 ```
 
 This results in the following Groove graph transformation rule:
