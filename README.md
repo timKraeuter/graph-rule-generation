@@ -80,7 +80,22 @@ The rule can be applied to our graph generated above. The result is the followin
 ## Generating graph transformation systems:
 
 ```java
+GrooveGTSBuilder gtsBuilder = new GrooveGTSBuilder().name("README").layout(true);
+GrooveGraphBuilder startGraphBuilder = gtsBuilder.startGraph();
+// Build start graph as shown above ...
+GrooveRuleBuilder ruleBuilder = gtsBuilder.rules();
+// Build rules as shown above ...
 
+// Add groove properties if needed
+gtsBuilder.addProperty("matchInjective", "true");
+
+// Write each part of the GTS individually.    
+gtsBuilder.writeStartGraph(targetDir);
+gtsBuilder.writeRules(targetDir);
+gtsBuilder.writePropertiesFile(targetDir);
+    
+// Write the whole GTS, i.e., start graph, rules, and properties file into a new dir. 
+gtsBuilder.writeGTS(targetDir);
 ```
 
 # Motivation
