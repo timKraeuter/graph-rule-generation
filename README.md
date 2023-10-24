@@ -19,10 +19,11 @@ Here is an example of how to use the builder:
 GrooveGraphBuilder builder = new GrooveGraphBuilder();
 GrooveNode a = new GrooveNode("A");
 GrooveNode b = new GrooveNode("B");
+GrooveNode c = new GrooveNode("C");
+GrooveNode d = new GrooveNode("D");
 GrooveGraph graph = builder.name("Graph")
-    .addNode(a)
-    .addNode(b)
-    .addEdge("A_B", a, b)
+    .addEdge("AB", a, b) // Nodes are automatically added.
+    .addEdge("CD", c, d)
     .build();
 ```
 
@@ -32,22 +33,23 @@ Here is an example of how to use the builder:
 ```java
 GrooveRuleBuilder ruleBuilder = new GrooveRuleBuilder();
 ruleBuilder.startRule("sampleRule");
-// Adding nodes and edges
-GrooveNode a = ruleBuilder.addNode("A");
-GrooveNode b = ruleBuilder.addNode("B");
-ruleBuilder.addEdge("A_B", a, b);
+
+// Context nodes and edges
+GrooveNode a = ruleBuilder.contextNode("A");
+GrooveNode b = ruleBuilder.contextNode("B");
+ruleBuilder.contextEdge("AB", a, b);
 // Deleting nodes and edges
 GrooveNode c = ruleBuilder.deleteNode("C");
 GrooveNode d = ruleBuilder.deleteNode("D");
-ruleBuilder.deleteEdge("C_D", c, d);
-// Context nodes and edges
-GrooveNode e = ruleBuilder.contextNode("E");
-GrooveNode f = ruleBuilder.contextNode("F");
-ruleBuilder.contextEdge("E_F", e, f);
+ruleBuilder.deleteEdge("CD", c, d);
+// Adding nodes and edges
+GrooveNode e = ruleBuilder.addNode("E");
+GrooveNode f = ruleBuilder.addNode("F");
+ruleBuilder.addEdge("EF", e, f);
 // NAC nodes
 GrooveNode g = ruleBuilder.nacNode("G");
 GrooveNode h = ruleBuilder.nacNode("H");
-ruleBuilder.contextEdge("G_H", g, h);
+ruleBuilder.contextEdge("GH", g, h);
 
 GrooveGraphRule gtRule = ruleBuilder.buildRule();
 ```
