@@ -7,8 +7,9 @@ public interface GraphRuleGenerator {
    * Start a new rule.
    *
    * @param ruleName name for the new rule.
+   * @return builder.
    */
-  void startRule(String ruleName);
+  GraphRuleGenerator startRule(String ruleName);
 
   /**
    * Define that the current rule needs a node in the context with the given name.
@@ -48,8 +49,9 @@ public interface GraphRuleGenerator {
    * @param name edge name
    * @param source source node
    * @param target target node
+   * @return builder.
    */
-  void addEdge(String name, GraphNode source, GraphNode target);
+  GraphRuleGenerator addEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule deletes an edge between two nodes (The nodes must be in context,
@@ -58,8 +60,9 @@ public interface GraphRuleGenerator {
    * @param name edge name
    * @param source source node
    * @param target target node
+   * @return builder.
    */
-  void deleteEdge(String name, GraphNode source, GraphNode target);
+  GraphRuleGenerator deleteEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule needs an edge between two nodes (The nodes must be in context,
@@ -68,8 +71,9 @@ public interface GraphRuleGenerator {
    * @param name edge name
    * @param source source node
    * @param target target node
+   * @return builder.
    */
-  void contextEdge(String name, GraphNode source, GraphNode target);
+  GraphRuleGenerator contextEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Build the current rule.

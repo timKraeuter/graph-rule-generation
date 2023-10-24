@@ -90,12 +90,13 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   @Override
-  public void startRule(String ruleName) {
+  public GrooveRuleBuilder startRule(String ruleName) {
     if (ruleNameToRule.get(ruleName) != null) {
       throw new IllegalArgumentException(
           String.format("A rule with the name \"%s\" already exists!", ruleName));
     }
     this.currentRule = new GrooveGraphRule(ruleName);
+    return this;
   }
 
   @Override
@@ -116,7 +117,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   @Override
-  public void addEdge(String edgeName, GraphNode source, GraphNode target) {
+  public GrooveRuleBuilder addEdge(String edgeName, GraphNode source, GraphNode target) {
 
     assert this.currentRule != null;
     Map<String, GrooveNode> contextAndAddedNodes = this.currentRule.getContextAndAddedNodes();
@@ -126,6 +127,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
     this.checkNodeContainment(source, target, sourceNode, targetNode);
 
     this.currentRule.addNewEdge(new GrooveEdge(edgeName, sourceNode, targetNode));
+    return this;
   }
 
   @Override
@@ -147,7 +149,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
   }
 
   @Override
-  public void deleteEdge(String edgeName, GraphNode source, GraphNode target) {
+  public GrooveRuleBuilder deleteEdge(String edgeName, GraphNode source, GraphNode target) {
     assert this.currentRule != null;
     Map<String, GrooveNode> contextAndAddedNodes = this.currentRule.getAllNodes();
 
@@ -157,10 +159,11 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
     this.checkNodeContainment(source, target, sourceNode, targetNode);
 
     this.currentRule.addDelEdge(new GrooveEdge(edgeName, sourceNode, targetNode));
+    return this;
   }
 
   @Override
-  public void contextEdge(String name, GraphNode source, GraphNode target) {
+  public GrooveRuleBuilder contextEdge(String name, GraphNode source, GraphNode target) {
     assert this.currentRule != null;
     Map<String, GrooveNode> nodes = this.currentRule.getAllNodes();
 
@@ -170,6 +173,7 @@ public class GrooveRuleBuilder implements GraphRuleGenerator {
     this.checkNodeContainment(source, target, sourceNode, targetNode);
 
     this.currentRule.addContextEdge(new GrooveEdge(name, sourceNode, targetNode));
+    return this;
   }
 
   private void checkNodeContainment(

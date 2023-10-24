@@ -91,12 +91,12 @@ public class GrooveGTSBuilder {
   }
 
   /**
-   * Writes the GTS to the specified dir.
+   * Writes the GTS to the specified dir. This includes start graph, rules and the properties file.
    *
    * @param targetDir target directory.
    * @return dir to the generated GTS
    */
-  public Path buildAndWrite(Path targetDir) {
+  public Path writeGTS(Path targetDir) {
     Path dir = makeSubFolder(this.name, targetDir);
 
     writeStartGraph(dir);
