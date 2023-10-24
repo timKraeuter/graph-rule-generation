@@ -4,12 +4,9 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=timKraeuter_graph-rule-generation&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=timKraeuter_graph-rule-generation)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=timKraeuter_graph-rule-generation&metric=bugs)](https://sonarcloud.io/summary/new_code?id=timKraeuter_graph-rule-generation)
 
-# graph-rule-generation
+# Graph-rule-generation
 
-Available
-on [Maven Central](https://mvnrepository.com/artifact/io.github.timKraeuter/graph-rule-generation)
-and faster indexing
-on [SonaType](https://central.sonatype.com/artifact/io.github.timKraeuter/graph-rule-generation).
+The library is available on [Maven Central](https://mvnrepository.com/artifact/io.github.timKraeuter/graph-rule-generation) and new versions can be found faster on the [SonaType](https://central.sonatype.com/artifact/io.github.timKraeuter/graph-rule-generation) repository.
 
 # Usage
 
@@ -17,7 +14,7 @@ This library allows users to programmatically generate graphs, graph transformat
 _entire_ graph transformation systems. Currently, it targets the graph transformation
 tool [Groove](https://groove.ewi.utwente.nl/).
 
-## Generating graphs:
+## Generating graphs
 
 Graphs are created using the _GrooveGraphBuilder_ and can be written for Groove via the
 _GrooveRuleAndGraphWriter_.
@@ -39,7 +36,7 @@ This results in the following Groove graph:
 
 ![Generated Groove Graph](./documentation/graph.png)
 
-## Generating graph transformation rules:
+## Generating graph transformation rules
 
 Graphs are created using the _GrooveRuleBuilder_ and can be written for Groove via the
 _GrooveRuleAndGraphWriter_.
