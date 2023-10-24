@@ -47,7 +47,7 @@ Here is an example of how to use the builder:
 
 ```java
 GrooveRuleBuilder ruleBuilder=new GrooveRuleBuilder();
-    ruleBuilder.startRule("sampleRule");
+ruleBuilder.startRule("sampleRule");
 
 // Context nodes and edges
 GrooveNode a=ruleBuilder.contextNode("A");
