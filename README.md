@@ -13,7 +13,7 @@ Available on [Maven Central](https://mvnrepository.com/artifact/io.github.timKra
 This library allows users to programmatically generate graphs, graph transformation rules, and even _entire_ graph transformation systems. Currently, it targets the graph transformation tool [Groove](https://groove.ewi.utwente.nl/).
 
 ## Generating graphs:
-Graphs are created using the _GrooveGraphBuilder_ and can be written for Groove via their _write()_ method. 
+Graphs are created using the _GrooveGraphBuilder_ and can be written for Groove via the _GrooveRuleAndGraphWriter_. 
 Here is an example of how to use the builder:
 ```java
 GrooveGraphBuilder builder = new GrooveGraphBuilder();
@@ -27,7 +27,8 @@ GrooveGraph graph = builder.name("Graph")
 ```
 
 ## Generating graph transformation rules:
-
+Graphs are created using the _GrooveRuleBuilder_ and can be written for Groove via the _GrooveRuleAndGraphWriter_. 
+Here is an example of how to use the builder:
 ```java
 
 ```
