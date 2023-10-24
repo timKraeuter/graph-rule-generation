@@ -61,7 +61,7 @@ ruleBuilder.deleteEdge("CD",c,d);
 GrooveNode e = ruleBuilder.addNode("E");
 GrooveNode f = ruleBuilder.addNode("F");
 ruleBuilder.addEdge("EF",e,f);
-// NAC nodes
+// NAC nodes and edges
 GrooveNode g = ruleBuilder.nacNode("G");
 GrooveNode h = ruleBuilder.nacNode("H");
 ruleBuilder.nacEdge("GH",g,h);
