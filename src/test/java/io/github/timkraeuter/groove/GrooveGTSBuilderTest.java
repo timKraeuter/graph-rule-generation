@@ -4,10 +4,7 @@ import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import io.github.timkraeuter.groove.graph.GrooveGraph;
-import io.github.timkraeuter.groove.graph.GrooveGraphBuilder;
 import io.github.timkraeuter.groove.graph.GrooveNode;
-import io.github.timkraeuter.groove.rule.GrooveRuleBuilder;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -195,51 +192,5 @@ class GrooveGTSBuilderTest {
 
   private String readFileFromDir(Path dir, String filename) throws IOException {
     return Files.readString(Path.of(dir.toString(), filename));
-  }
-
-  @Test
-  void readmeExample() {
-    grooveGTSBuilder.name("README").layout(true);
-
-    // Build example start graph
-    exampleStartGraph();
-
-    // Build example rule
-    exampleRule();
-
-    grooveGTSBuilder.writeGTS(Path.of("C:\\Research"));
-  }
-
-  private void exampleRule() {
-    GrooveRuleBuilder ruleBuilder = grooveGTSBuilder.rules();
-    ruleBuilder.startRule("sampleRule");
-
-    // Context nodes and edges
-    GrooveNode a = ruleBuilder.contextNode("A");
-    GrooveNode b = ruleBuilder.contextNode("B");
-    ruleBuilder.contextEdge("AB", a, b);
-    // Deleting nodes and edges
-    GrooveNode c = ruleBuilder.deleteNode("C");
-    GrooveNode d = ruleBuilder.deleteNode("D");
-    ruleBuilder.deleteEdge("CD", c, d);
-    // Adding nodes and edges
-    GrooveNode e = ruleBuilder.addNode("E");
-    GrooveNode f = ruleBuilder.addNode("F");
-    ruleBuilder.addEdge("EF", e, f);
-    // NAC nodes
-    GrooveNode g = ruleBuilder.nacNode("G");
-    GrooveNode h = ruleBuilder.nacNode("H");
-    ruleBuilder.contextEdge("GH", g, h);
-
-    ruleBuilder.buildRule();
-  }
-
-  private void exampleStartGraph() {
-    GrooveGraphBuilder builder = grooveGTSBuilder.startGraph();
-    GrooveNode a = new GrooveNode("A");
-    GrooveNode b = new GrooveNode("B");
-    GrooveNode c = new GrooveNode("C");
-    GrooveNode d = new GrooveNode("D");
-    GrooveGraph graph = builder.name("Graph").addEdge("AB", a, b).addEdge("CD", c, d).build();
   }
 }
