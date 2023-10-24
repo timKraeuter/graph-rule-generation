@@ -24,12 +24,12 @@ _GrooveRuleAndGraphWriter_.
 Here is an example of how to use the builder:
 
 ```java
-GrooveGraphBuilder builder=new GrooveGraphBuilder();
-GrooveNode a=new GrooveNode("A");
-GrooveNode b=new GrooveNode("B");
-GrooveNode c=new GrooveNode("C");
-GrooveNode d=new GrooveNode("D");
-GrooveGraph graph=builder.name("Graph")
+GrooveGraphBuilder builder = new GrooveGraphBuilder();
+GrooveNode a = new GrooveNode("A");
+GrooveNode b = new GrooveNode("B");
+GrooveNode c = new GrooveNode("C");
+GrooveNode d = new GrooveNode("D");
+GrooveGraph graph = builder.name("Graph")
     .addEdge("AB",a,b) // Nodes are automatically added.
     .addEdge("CD",c,d)
     .build();
