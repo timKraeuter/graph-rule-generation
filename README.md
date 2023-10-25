@@ -74,7 +74,7 @@ The rule can be applied to our graph generated above. The result is the followin
 
 ![Result rule](./documentation/result.png)
 
-## Generating graph transformation systems:
+## Generating graph transformation systems
 
 ```java
 GrooveGTSBuilder gtsBuilder = new GrooveGTSBuilder().name("README").layout(true);
