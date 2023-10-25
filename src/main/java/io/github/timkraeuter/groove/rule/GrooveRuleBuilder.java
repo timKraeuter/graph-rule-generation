@@ -1,7 +1,7 @@
 package io.github.timkraeuter.groove.rule;
 
 import io.github.timkraeuter.api.GraphNode;
-import io.github.timkraeuter.api.GraphRuleGenerator;
+import io.github.timkraeuter.api.GraphRuleBuilder;
 import io.github.timkraeuter.groove.graph.GrooveEdge;
 import io.github.timkraeuter.groove.graph.GrooveNode;
 import java.util.Comparator;
@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 /** Builder for Groove rules. */
-public class GrooveRuleBuilder implements GraphRuleGenerator {
+public class GrooveRuleBuilder implements GraphRuleBuilder {
   private final Map<String, GrooveGraphRule> ruleNameToRule;
   private GrooveGraphRule currentRule;
 

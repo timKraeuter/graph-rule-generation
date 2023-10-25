@@ -2,8 +2,8 @@ package io.github.timkraeuter.api;
 
 import io.github.timkraeuter.groove.graph.GrooveNode;
 
-/** Represent a rule generator for graphs. */
-public interface GraphRuleGenerator {
+/** Represent a rule builder for graphs. */
+public interface GraphRuleBuilder {
 
   /**
    * Start a new rule.
@@ -11,7 +11,7 @@ public interface GraphRuleGenerator {
    * @param ruleName name for the new rule.
    * @return builder.
    */
-  GraphRuleGenerator startRule(String ruleName);
+  GraphRuleBuilder startRule(String ruleName);
 
   /**
    * Define that the current rule needs a node in the context with the given name.
@@ -53,7 +53,7 @@ public interface GraphRuleGenerator {
    * @param target target node
    * @return builder.
    */
-  GraphRuleGenerator addEdge(String name, GraphNode source, GraphNode target);
+  GraphRuleBuilder addEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule deletes an edge between two nodes (The nodes must be in context,
@@ -64,7 +64,7 @@ public interface GraphRuleGenerator {
    * @param target target node
    * @return builder.
    */
-  GraphRuleGenerator deleteEdge(String name, GraphNode source, GraphNode target);
+  GraphRuleBuilder deleteEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule needs an edge between two nodes (The nodes must be in context,
@@ -75,7 +75,7 @@ public interface GraphRuleGenerator {
    * @param target target node
    * @return builder.
    */
-  GraphRuleGenerator contextEdge(String name, GraphNode source, GraphNode target);
+  GraphRuleBuilder contextEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule is not applicable if an edge between the two nodes exists.
@@ -85,7 +85,7 @@ public interface GraphRuleGenerator {
    * @param target target node
    * @return builder.
    */
-  GraphRuleGenerator nacEdge(String name, GrooveNode source, GrooveNode target);
+  GraphRuleBuilder nacEdge(String name, GrooveNode source, GrooveNode target);
 
   /**
    * Build the current rule.
