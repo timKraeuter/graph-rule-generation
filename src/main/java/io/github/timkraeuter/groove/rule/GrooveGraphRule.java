@@ -1,6 +1,6 @@
 package io.github.timkraeuter.groove.rule;
 
-import io.github.timkraeuter.api.GraphRule;
+import io.github.timkraeuter.api.GraphTransformationRule;
 import io.github.timkraeuter.groove.graph.GrooveEdge;
 import io.github.timkraeuter.groove.graph.GrooveNode;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 /** Represent a groove graph rule. */
-public class GrooveGraphRule implements GraphRule {
+public class GrooveGraphRule implements GraphTransformationRule {
   private final String ruleName;
 
   private final Map<String, GrooveNode> nodesToBeAdded;

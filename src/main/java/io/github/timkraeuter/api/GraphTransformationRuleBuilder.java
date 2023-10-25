@@ -1,9 +1,7 @@
 package io.github.timkraeuter.api;
 
-import io.github.timkraeuter.groove.graph.GrooveNode;
-
 /** Represent a rule builder for graphs. */
-public interface GraphRuleBuilder {
+public interface GraphTransformationRuleBuilder {
 
   /**
    * Start a new rule.
@@ -11,7 +9,7 @@ public interface GraphRuleBuilder {
    * @param ruleName name for the new rule.
    * @return builder.
    */
-  GraphRuleBuilder startRule(String ruleName);
+  GraphTransformationRuleBuilder startRule(String ruleName);
 
   /**
    * Define that the current rule needs a node in the context with the given name.
@@ -53,7 +51,7 @@ public interface GraphRuleBuilder {
    * @param target target node
    * @return builder.
    */
-  GraphRuleBuilder addEdge(String name, GraphNode source, GraphNode target);
+  GraphTransformationRuleBuilder addEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule deletes an edge between two nodes (The nodes must be in context,
@@ -64,7 +62,7 @@ public interface GraphRuleBuilder {
    * @param target target node
    * @return builder.
    */
-  GraphRuleBuilder deleteEdge(String name, GraphNode source, GraphNode target);
+  GraphTransformationRuleBuilder deleteEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule needs an edge between two nodes (The nodes must be in context,
@@ -75,7 +73,7 @@ public interface GraphRuleBuilder {
    * @param target target node
    * @return builder.
    */
-  GraphRuleBuilder contextEdge(String name, GraphNode source, GraphNode target);
+  GraphTransformationRuleBuilder contextEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Define that the current rule is not applicable if an edge between the two nodes exists.
@@ -85,12 +83,12 @@ public interface GraphRuleBuilder {
    * @param target target node
    * @return builder.
    */
-  GraphRuleBuilder nacEdge(String name, GrooveNode source, GrooveNode target);
+  GraphTransformationRuleBuilder nacEdge(String name, GraphNode source, GraphNode target);
 
   /**
    * Build the current rule.
    *
    * @return the build rule.
    */
-  GraphRule buildRule();
+  GraphTransformationRule buildRule();
 }
