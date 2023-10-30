@@ -193,6 +193,30 @@ class GrooveRuleGenerationTest {
     testRuleEquals("threeRuleSynch", tempDir);
   }
 
+  @Test
+  void generateSampleRuleLMCS2024() throws Exception {
+    Path tempDir = Files.createTempDirectory("");
+    GrooveRuleBuilder ruleBuilder = new GrooveRuleBuilder();
+    ruleBuilder.startRule("lmcs-rule");
+    GrooveNode a = ruleBuilder.contextNode("A");
+    GrooveNode b = ruleBuilder.contextNode("B");
+    ruleBuilder.contextEdge("AB", a, b);
+    GrooveNode c = ruleBuilder.deleteNode("C");
+    GrooveNode d = ruleBuilder.deleteNode("D");
+    ruleBuilder.deleteEdge("CD", c, d);
+    GrooveNode e = ruleBuilder.addNode("E");
+    GrooveNode f = ruleBuilder.addNode("F");
+    ruleBuilder.addEdge("EF", e, f);
+    GrooveNode g = ruleBuilder.nacNode("G");
+    GrooveNode h = ruleBuilder.nacNode("H");
+    ruleBuilder.nacEdge("GH", g, h);
+    GrooveGraphRule gtRule = ruleBuilder.buildRule();
+
+    GrooveRuleAndGraphWriter.writeRules(tempDir, Stream.of(gtRule), true);
+
+    testRuleEquals("lmcs-rule", tempDir);
+  }
+
   private static void testRuleEquals(String resource, Path tempDir) {
     String resourceRuleName = resource + ".gpr";
     Path expected_rule = getResource(resourceRuleName);
