@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class GrooveRuleGenerationTest {
+class GrooveRuleBuilderTest {
 
   @BeforeEach
   void setUp() {
