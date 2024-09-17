@@ -2,6 +2,7 @@ package io.github.timkraeuter.groove;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import io.github.timkraeuter.groove.graph.GrooveNode;
@@ -159,6 +160,7 @@ class GrooveGTSBuilderTest {
     grooveGTSBuilder.writePropertiesFile(tempDir);
 
     String propertiesContent = readFileFromDir(tempDir, "system.properties");
+    assertThat(propertiesContent, not(containsString("location")));
     assertThat(propertiesContent, containsString("A=B"));
     assertThat(
         propertiesContent,

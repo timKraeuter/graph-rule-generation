@@ -158,8 +158,8 @@ public class GrooveGTSBuilder {
 
     String propertiesContent =
         String.format(
-            "# %s (graph rule generation, see https://github.com/timKraeuter/graph-rule-generation)%nlocation=%s%nstartGraph=%s%n%sgrooveVersion=6.1.0%ngrammarVersion=3.7",
-            dtf.format(now), targetDir, START, this.getAdditionalProperties());
+            "# %s (graph rule generation, see https://github.com/timKraeuter/graph-rule-generation)%nstartGraph=%s%n%sgrooveVersion=6.1.0%ngrammarVersion=3.7",
+            dtf.format(now), START, this.getAdditionalProperties());
     Path propertiesFile = Paths.get(targetDir.toString(), "system.properties");
     try {
       Files.writeString(propertiesFile, propertiesContent);
