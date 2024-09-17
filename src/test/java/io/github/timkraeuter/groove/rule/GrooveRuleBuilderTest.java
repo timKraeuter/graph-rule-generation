@@ -219,8 +219,8 @@ class GrooveRuleBuilderTest {
 
   private static void testRuleEquals(String resource, Path tempDir) {
     String resourceRuleName = resource + ".gpr";
-    Path expected_rule = getResource(resourceRuleName);
-    Path generated_rule = Path.of(tempDir.toString(), resourceRuleName);
-    FileTestHelper.testFileEquals(expected_rule, generated_rule);
+    Path expectedRule = getResource(resourceRuleName);
+    Path generatedRule = Path.of(tempDir.toString(), resourceRuleName);
+    FileTestHelper.testFileEquals(expectedRule, generatedRule);
   }
 }
